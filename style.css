@@ -4,6 +4,7 @@ body {
   font-family: Arial, sans-serif;
   max-width: 500px;
   margin: 40px auto;
+  font-family: 'Inter', system-ui, sans-serif;
 }
 
 :root {
@@ -19,6 +20,9 @@ body {
   color: var(--cream);
   font-size: 2rem;
   margin: 16px 0 24px;
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  letter-spacing: 0.5px;
 }
 
 .class {
@@ -40,6 +44,8 @@ body {
   color: var(--primary);
   border-bottom: 2px solid var(--primary);
   padding-bottom: 6px;
+  font-family: 'Playfair Display', serif;
+  font-weight: 600;
 }
 
 }
@@ -53,6 +59,7 @@ button {
   cursor: pointer;
   font-weight: 500;
   transition: transform 0.1s ease, box-shadow 0.1s ease;
+  font-family: 'Inter', system-ui, sans-serif;
 }
 
 button:hover {
@@ -96,6 +103,7 @@ button.active {
   display: flex;
   gap: 8px;
 }
+
 
 
 
