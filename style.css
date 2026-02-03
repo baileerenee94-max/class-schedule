@@ -1,14 +1,27 @@
 body {
+  background: var(--bg);
+  color: var(--text);
   font-family: Arial, sans-serif;
   max-width: 500px;
   margin: 40px auto;
 }
 
+:root {
+  --bg: #ffffff;           /* page background */
+  --card: #fffafa;         /* class card background */
+  --primary: #bf0d2e;      /* Jersey College red */
+  --secondary: #d4a017;    /* Jersey College gold */
+  --text: #1a1a1a;         /* main text */
+  --muted: #666666;        /* secondary text */
+}
+
 .class {
-  padding: 10px;
-  margin-bottom: 10px;
-  background: #f2f2f2;
-  border-radius: 6px;
+  background: var(--card);
+  border-left: 4px solid var(--secondary);
+  padding: 12px;
+  margin-bottom: 12px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.06);
 }
 
 .program {
@@ -17,6 +30,25 @@ body {
 
 .program h2 {
   margin-bottom: 10px;
+  color: var(--primary);
+  border-bottom: 2px solid var(--primary);
+  padding-bottom: 6px;
+}
+
+}
+
+button {
+  background: var(--primary);
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 0.9;
+  background: #a50b26; /* slightly darker red for hover */
 }
 
 #session-toggle button {
@@ -38,3 +70,4 @@ body {
 .program h2 {
   margin-bottom: 10px;
 }
+
