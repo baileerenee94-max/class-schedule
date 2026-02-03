@@ -1,5 +1,7 @@
 const SHEET_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSPXKWimTcq8BlxE-L7uZN3ferzhKLJ_ukIxR5nTMYVg7lJVaPWznxAVNMcdfWO-_JlcjsmJduwKdQ1/pub?gid=0&single=true&output=csv";
 
+let allRows = [];
+
 let SESSION_TYPE = "Day";
 
 function setSession(session) {
@@ -31,43 +33,33 @@ function renderProgram(day, programName, containerId) {
 
   const classesForDay = [];
 
- allRows.forEach(row => {
-  ...
-  if (...) {
-    classesForDay.push({...});
-  }
-});
-
-classesForDay.sort((a, b) => a.start.localeCompare(b.start));
-
-classesForDay.forEach(cls => {
-  ...
-});
+  allRows.forEach(row => {
+    if (!row) return;
 
     const cells = row.split(",").map(c => c.trim());
 
-const program = cells[0];
-const session = cells[1];
-const rowDay = cells[2];
+    const program = cells[0];
+    const session = cells[1];
+    const rowDay = cells[2];
 
-console.log(program, session, rowDay, "→", SESSION_TYPE, day);
-if (
-  program.trim().toUpperCase() === programName &&
-  session.trim().toUpperCase() === SESSION_TYPE.toUpperCase() &&
-  rowDay.trim() === day
-) {
-
+    if (
+      program.trim().toUpperCase() === programName &&
+      session.trim().toUpperCase() === SESSION_TYPE.toUpperCase() &&
+      rowDay.trim() === day
+    ) {
       classesForDay.push({
-start: cells[3],
-end: cells[4],
-subject: cells[5],
-room: cells[6]
+        start: cells[3],
+        end: cells[4],
+        subject: cells[5],
+        room: cells[6]
       });
     }
   });
 
+  // ✅ SORT ONCE
   classesForDay.sort((a, b) => a.start.localeCompare(b.start));
 
+  // ✅ RENDER
   classesForDay.forEach(cls => {
     const div = document.createElement("div");
     div.className = "class";
@@ -94,5 +86,6 @@ fetch(SHEET_URL)
     showDay(today);
   })
   .catch(err => console.error(err));
+
 
 
