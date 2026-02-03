@@ -48,7 +48,7 @@ body {
 }
 
 .sidebar {
-  background: var(--cream);
+  background: var(--bg);
   padding: 20px;
   border-radius: 16px;
 }
@@ -178,6 +178,7 @@ button.active {
 .content {
   padding-top: 16px;
 }
+
 
 
 
