@@ -8,12 +8,11 @@ body {
 }
 
 .banner {
-  padding: 16px;
+  padding: 4px 24px;
   display: flex;
   justify-content: center;
   align-items: center;
   border-bottom: 3px solid #c9a24d; /* dark gold */
-  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
   margin-bottom: 24px;
 }
 
@@ -117,6 +116,7 @@ button {
   box-shadow: inset 0 0 0 1px rgba(0,0,0,0.05);
   transition: background 0.2s ease, box-shadow 0.2s ease;
 }
+
 
 
 
