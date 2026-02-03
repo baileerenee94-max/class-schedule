@@ -15,14 +15,16 @@
   <img src="logo.png" alt="Jersey College Logo" class="banner-logo">
 </header>
 
-<div id="session-toggle">
-  <div class="controls">
-  <div class="session-buttons">
-    <button id="dayBtn" onclick="setSession('Day')">Day</button>
-<button id="eveningBtn" onclick="setSession('Evening')">Evening</button>
-  </div>
-  </div>
-</div>
+ <div class="layout">
+  <aside class="sidebar"> 
+    <div id="session-toggle">
+      <div class="controls">
+        <div class="session-buttons">
+          <button id="dayBtn" onclick="setSession('Day')">Day</button>
+          <button id="eveningBtn" onclick="setSession('Evening')">Evening</button>
+         </div>
+        </div>
+      </div>
 
   <div class="day-buttons">
     <button onclick="showDay('Monday')">Mon</button>
@@ -31,8 +33,12 @@
     <button onclick="showDay('Thursday')">Thu</button>
     <button onclick="showDay('Friday')">Fri</button>
   </div>
-</div>
+</aside>
 
+ <main class="content">
+    <!-- schedule title + RN / PN columns -->
+ </main>
+</div>
 <h1 id="day"></h1>
 
 <h1 id="day"></h1>
@@ -53,6 +59,7 @@
 <script src="script.js"></script>
 </body>
 </html>
+
 
 
 
