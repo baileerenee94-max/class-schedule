@@ -7,7 +7,7 @@ body {
 }
 
 :root {
-  --bg: #ffffff;           /* page background */
+  --bg: #f3f4f6;           /* page background */
   --card: #fffafa;         /* class card background */
   --primary: #bf0d2e;      /* Jersey College red */
   --secondary: #d4a017;    /* Jersey College gold */
@@ -70,4 +70,5 @@ button:hover {
 .program h2 {
   margin-bottom: 10px;
 }
+
 
