@@ -103,6 +103,15 @@ button {
   transition: background 0.2s ease, box-shadow 0.2s ease;
 }
 
+.site-logo {
+  display: block;
+  width: 72px;
+  height: auto;
+  margin: 16px auto 8px;
+  opacity: 0.95;
+  filter: drop-shadow(0 4px 8px rgba(0,0,0,0.35));
+}
+
 
 
 
