@@ -62,6 +62,7 @@ let currentDay = "";
 
 function showDay(day) {
   currentDay = day;
+
   document.getElementById("day").innerText =
     day + "'s Schedule";
 
@@ -139,6 +140,7 @@ fetch(SHEET_URL)
   startLiveSessionWatcher(); // 👈 ADD THIS
   })
   .catch(err => console.error(err));
+
 
 
 
