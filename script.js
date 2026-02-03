@@ -1,3 +1,5 @@
+console.log("SCRIPT LOADED");
+
 const SHEET_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSPXKWimTcq8BlxE-L7uZN3ferzhKLJ_ukIxR5nTMYVg7lJVaPWznxAVNMcdfWO-_JlcjsmJduwKdQ1/pub?output=csv";
 
 let allRows = [];
@@ -139,6 +141,7 @@ fetch(SHEET_URL)
   startLiveSessionWatcher(); // 👈 ADD THIS
   })
   .catch(err => console.error(err));
+
 
 
 
