@@ -40,10 +40,6 @@ body {
 }
 
 .sidebar {
-  position: absolute;
-  left: 32px;
-  top: 140px;
-
   width: 220px;
   background-color: var(--cream);
   padding: 16px;
@@ -147,6 +143,7 @@ button.active {
 .content {
   padding-top: 16px;
 }
+
 
 
 
