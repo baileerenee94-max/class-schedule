@@ -120,16 +120,35 @@ button.active {
 }
 
 @media (max-width: 800px) {
-  .sidebar {
-    position: static;
-    width: auto;
-    margin-bottom: 24px;
+  .layout {
+    display: block;
   }
 
-  .schedule-grid {
-    grid-template-columns: 1fr;
+  .sidebar {
+    position: absolute;
+    left: 32px;
+    top: 140px;
+    width: 220px;
+    background-color: #f6f1e7;
+    padding: 16px;
+    border-radius: 16px;
   }
 }
+
+.page {
+  position: relative;
+}
+
+.layout {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.content {
+  padding-top: 16px;
+}
+
+
 
 
 
