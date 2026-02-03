@@ -57,7 +57,11 @@ function renderProgram(day, programName, containerId) {
   });
 
   // ✅ SORT ONCE
-  classesForDay.sort((a, b) => a.start.localeCompare(b.start));
+  classesForDay.sort((a, b) => {
+  const [ah, am] = a.start.split(":").map(Number);
+  const [bh, bm] = b.start.split(":").map(Number);
+  return ah * 60 + am - (bh * 60 + bm);
+});
 
   // ✅ RENDER
   classesForDay.forEach(cls => {
@@ -86,6 +90,7 @@ fetch(SHEET_URL)
     showDay(today);
   })
   .catch(err => console.error(err));
+
 
 
 
