@@ -51,6 +51,12 @@ button:hover {
   background: #a50b26; /* slightly darker red for hover */
 }
 
+button.active {
+  background: var(--secondary);
+  color: var(--text);
+  font-weight: bold;
+}
+
 #session-toggle button {
   margin-right: 6px;
 }
@@ -70,5 +76,6 @@ button:hover {
 .program h2 {
   margin-bottom: 10px;
 }
+
 
 
