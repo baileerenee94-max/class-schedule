@@ -17,6 +17,7 @@ function autoSetSessionByTime() {
 
 function setSession(session) {
   SESSION_TYPE = session;
+  updateSessionButtons();
   showDay(currentDay);
 }
 
@@ -118,6 +119,7 @@ fetch(SHEET_URL)
     updateSessionButtons(); // 👈 ADD THIS (see next step)
   })
   .catch(err => console.error(err));
+
 
 
 
