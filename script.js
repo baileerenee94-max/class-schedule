@@ -13,7 +13,6 @@ function autoSetSessionByTime() {
   } else {
     SESSION_TYPE = "Day";
   }
-}
 
 function startLiveSessionWatcher() {
   let lastSession = SESSION_TYPE;
@@ -140,6 +139,7 @@ fetch(SHEET_URL)
   startLiveSessionWatcher(); // 👈 ADD THIS
   })
   .catch(err => console.error(err));
+
 
 
 
