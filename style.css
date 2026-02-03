@@ -7,6 +7,11 @@
   --muted: #6b7280;
 }
 
+html, body {
+  height: 100%;
+  overflow: hidden; /* 🚫 no page scrolling */
+}
+
 body {
   background: var(--bg);
   color: var(--text);
@@ -35,11 +40,11 @@ body {
 
 .layout {
   display: grid;
-  grid-template-columns: 240px 1fr;
-  gap: 48px;
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 32px 24px;
+  grid-template-columns: 220px 1fr;
+  gap: 32px;
+  padding: 0 24px;
+
+  height: calc(100vh - 150px); /* 👈 subtract banner height */
 }
 
 .sidebar {
@@ -50,6 +55,12 @@ body {
 
 .content {
   padding-top: 12px;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 #day {
@@ -72,7 +83,9 @@ body {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 24px;
-  margin-top: 20px;
+
+  flex: 1;            /* 👈 fills remaining space */
+  overflow: hidden;  /* 👈 prevents page scroll */
 }
 
 .class {
@@ -83,6 +96,16 @@ body {
   border-radius: 12px;
   color: var(--text);
   box-shadow: 0 6px 16px rgba(0,0,0,0.25);
+}
+
+.class {
+  padding: 10px;
+  margin-bottom: 10px;
+  font-size: 0.9rem;
+}
+
+#day {
+  margin-bottom: 12px;
 }
 
 button {
@@ -133,6 +156,16 @@ button.active {
   }
 }
 
+@media (orientation: portrait) {
+  .layout {
+    gap: 24px;
+  }
+
+  .banner-logo {
+    height: 130px;
+  }
+}
+
 .page {
   position: relative;
 }
@@ -145,6 +178,7 @@ button.active {
 .content {
   padding-top: 16px;
 }
+
 
 
 
