@@ -15,6 +15,7 @@ function autoSetSessionByTime() {
   } else {
     SESSION_TYPE = "Day";
   }
+}
 
 function startLiveSessionWatcher() {
   let lastSession = SESSION_TYPE;
@@ -129,18 +130,19 @@ fetch(SHEET_URL)
   .then(text => {
     allRows = text.split(/\r?\n/).slice(1);
 
-    autoSetSessionByTime(); // 👈 ADD THIS LINE
+    autoSetSessionByTime();
+    startLiveSessionWatcher();
 
     const today = new Date().toLocaleDateString("en-US", {
       weekday: "long"
     });
 
     showDay(today);
-    updateSessionButtons(); // 👈 ADD THIS (see next step)
-  })
-  startLiveSessionWatcher(); // 👈 ADD THIS
+    updateSessionButtons();
   })
   .catch(err => console.error(err));
+
+
 
 
 
