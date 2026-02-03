@@ -9,17 +9,22 @@
 <body>
 
 <div id="session-toggle">
-  <button onclick="setSession('Day')">Day</button>
-  <button onclick="setSession('Evening')">Evening</button>
+  <div class="controls">
+  <div class="session-buttons">
+    <button onclick="setSession('Day')" class="active">Day</button>
+    <button onclick="setSession('Evening')">Evening</button>
+  </div>
+
+  <div class="day-buttons">
+    <button onclick="showDay('Monday')">Mon</button>
+    <button onclick="showDay('Tuesday')">Tue</button>
+    <button onclick="showDay('Wednesday')">Wed</button>
+    <button onclick="showDay('Thursday')">Thu</button>
+    <button onclick="showDay('Friday')">Fri</button>
+  </div>
 </div>
 
-<div id="day-buttons">
-  <button onclick="showDay('Monday')">Mon</button>
-  <button onclick="showDay('Tuesday')">Tue</button>
-  <button onclick="showDay('Wednesday')">Wed</button>
-  <button onclick="showDay('Thursday')">Thu</button>
-  <button onclick="showDay('Friday')">Fri</button>
-</div>
+<h1 id="day"></h1>
 
 <h1 id="day"></h1>
 
@@ -39,6 +44,7 @@
 <script src="script.js"></script>
 </body>
 </html>
+
 
 
 
