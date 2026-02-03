@@ -15,6 +15,24 @@ function autoSetSessionByTime() {
   }
 }
 
+function startLiveSessionWatcher() {
+  let lastSession = SESSION_TYPE;
+
+  setInterval(() => {
+    const now = new Date();
+    const hour = now.getHours();
+
+    const newSession = hour >= 16 ? "Evening" : "Day";
+
+    if (newSession !== lastSession) {
+      lastSession = newSession;
+      SESSION_TYPE = newSession;
+      updateSessionButtons();
+      showDay(currentDay);
+    }
+  }, 60000); // check every 60 seconds
+}
+
 function setSession(session) {
   SESSION_TYPE = session;
   updateSessionButtons();
@@ -118,7 +136,10 @@ fetch(SHEET_URL)
     showDay(today);
     updateSessionButtons(); // 👈 ADD THIS (see next step)
   })
+  startLiveSessionWatcher(); // 👈 ADD THIS
+  })
   .catch(err => console.error(err));
+
 
 
 
