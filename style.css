@@ -7,12 +7,12 @@ body {
 }
 
 :root {
-  --bg: #55202a;           /* page background */
-  --card: #fffafa;         /* class card background */
-  --primary: #c9a24d;      /* Jersey College dark gold */
-  --secondary: #d4a017;    /* Jersey College gold */
-  --text: #1a1a1a;         /* main text */
-  --muted: #666666;        /* secondary text */
+  --bg: #5a1f2b;         /* burgundy */
+  --cream: #f6f1e7;      /* soft cream */
+  --primary: #c9a24d;    /* dark gold */
+  --secondary: #e6c26e;  /* light gold */
+  --text: #1a1a1a;
+  --muted: #6b7280;
 }
 
 #day {
@@ -22,11 +22,12 @@ body {
 }
 
 .class {
-  background: var(--card);
-  border-left: 4px solid var(--secondary);
+  background: var(--cream);
+  border-left: 4px solid var(--primary);
   padding: 12px;
   margin-bottom: 12px;
-  border-radius: 8px;
+  border-radius: 12px;
+  color: var(--text);
   box-shadow: 0 6px 16px rgba(0,0,0,0.25);
 }
 
@@ -44,25 +45,23 @@ body {
 }
 
 button {
-  background: rgba(255, 255, 255, 0.12);
-  color: #f9fafb;
-  border: 1px solid rgba(255, 255, 255, 0.25);
+  background: var(--cream);
+  color: #3a1a21;
+  border: none;
   padding: 6px 14px;
-  border-radius: 14px;
+  border-radius: 12px;
   cursor: pointer;
   font-weight: 500;
-  backdrop-filter: blur(2px);
-  transition: background 0.2s ease, transform 0.1s ease;
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
 }
 
 button:hover {
-  background: rgba(255, 255, 255, 0.18);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.25);
 }
 
 button.active {
   background: var(--primary);
   color: #1a1a1a;
-  border-color: transparent;
 }
 
 #session-toggle button {
@@ -97,6 +96,7 @@ button.active {
   display: flex;
   gap: 8px;
 }
+
 
 
 
