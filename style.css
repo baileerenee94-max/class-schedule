@@ -81,7 +81,7 @@ body {
 
 #day {
   color: var(--cream);
-  font-size: 2rem;
+  font-size: 1.9rem;
   margin: 4px 0 4px;
   line-height: 1.1;
   margin-bottom: 2px;
@@ -96,6 +96,7 @@ body {
   margin-bottom: 6px;
   line-height: 1.1;
   font-family: 'Playfair Display', serif;
+  font-size: 1.2rem;
 }
 
 .program {
@@ -193,6 +194,7 @@ button.active {
 .content {
   padding-top: 16px;
 }
+
 
 
 
