@@ -31,8 +31,21 @@ function renderProgram(day, programName, containerId) {
 
   const classesForDay = [];
 
-  allRows.forEach(row => {
-    if (!row) return;
+ allRows.forEach(row => {
+  ...
+  if (...) {
+    classesForDay.push({...});
+  }
+});
+
+// ✅ SORT HERE
+classesForDay.sort((a, b) => a.start.localeCompare(b.start));
+
+// then render
+classesForDay.forEach(cls => {
+  ...
+});
+
 
     const cells = row.split(",").map(c => c.trim());
 
@@ -84,3 +97,4 @@ fetch(SHEET_URL)
     showDay(today);
   })
   .catch(err => console.error(err));
+
