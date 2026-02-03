@@ -16,7 +16,7 @@ body {
 }
 
 #day {
-  color: #f9fafb;
+  color: var(--cream);
   font-size: 2rem;
   margin: 16px 0 24px;
 }
@@ -96,6 +96,7 @@ button.active {
   display: flex;
   gap: 8px;
 }
+
 
 
 
