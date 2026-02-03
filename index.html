@@ -1,12 +1,12 @@
-<!-- rebuild -->
-
 <!DOCTYPE html>
 <html>
 <head>
   <title>Daily Class Schedule</title>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -15,65 +15,52 @@
   <img src="logo.png" alt="Jersey College Logo" class="banner-logo">
 </header>
 
- <div class="layout">
+<div class="layout">
+
   <aside class="sidebar"> 
     <div id="session-toggle">
       <div class="controls">
         <div class="session-buttons">
           <button id="dayBtn" onclick="setSession('Day')">Day</button>
           <button id="eveningBtn" onclick="setSession('Evening')">Evening</button>
-         </div>
         </div>
       </div>
-
-  <div class="day-buttons">
-    <button onclick="showDay('Monday')">Mon</button>
-    <button onclick="showDay('Tuesday')">Tue</button>
-    <button onclick="showDay('Wednesday')">Wed</button>
-    <button onclick="showDay('Thursday')">Thu</button>
-    <button onclick="showDay('Friday')">Fri</button>
-  </div>
-</aside>
-
- <main class="content">
-
-  <h1 id="day">Tuesday's Schedule</h1>
-
-  <div class="schedule-grid">
-    <div class="program">
-      <h2>RN</h2>
-      <div id="schedule-rn"></div>
     </div>
 
-    <div class="program">
-      <h2>PN</h2>
-      <div id="schedule-pn"></div>
+    <div class="day-buttons">
+      <button onclick="showDay('Monday')">Mon</button>
+      <button onclick="showDay('Tuesday')">Tue</button>
+      <button onclick="showDay('Wednesday')">Wed</button>
+      <button onclick="showDay('Thursday')">Thu</button>
+      <button onclick="showDay('Friday')">Fri</button>
     </div>
-  </div>
+  </aside>
 
-</main>
+  <main class="content">
 
-  
-<h1 id="day"></h1>
+    <h1 id="day">Tuesday's Schedule</h1>
 
-<h1 id="day"></h1>
+    <div class="schedule-grid">
+      <div class="program">
+        <h2>RN</h2>
+        <div id="schedule-rn"></div>
+      </div>
 
-<div class="schedule-grid">
-  <div class="program">
-    <h2>RN</h2>
-    <div id="schedule-rn"></div>
-  </div>
+      <div class="program">
+        <h2>PN</h2>
+        <div id="schedule-pn"></div>
+      </div>
+    </div>
 
-  <div class="program">
-    <h2>PN</h2>
-    <div id="schedule-pn"></div>
-  </div>
+  </main>
+
 </div>
-
 
 <script src="script.js"></script>
 </body>
 </html>
+
+
 
 
 
