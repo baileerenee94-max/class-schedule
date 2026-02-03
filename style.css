@@ -7,7 +7,7 @@ body {
 }
 
 :root {
-  --bg: #f3f4f6;           /* page background */
+  --bg: #5a1f2b;           /* page background */
   --card: #fffafa;         /* class card background */
   --primary: #bf0d2e;      /* Jersey College red */
   --secondary: #d4a017;    /* Jersey College gold */
@@ -76,6 +76,7 @@ button.active {
 .program h2 {
   margin-bottom: 10px;
 }
+
 
 
 
