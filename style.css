@@ -44,25 +44,26 @@ body {
 }
 
 button {
-  background: transparent;
+  background: rgba(255, 255, 255, 0.12);
   color: #f9fafb;
-  border: 2px solid var(--primary);
+  border: 1px solid rgba(255, 255, 255, 0.25);
   padding: 6px 14px;
-  border-radius: 999px;
+  border-radius: 14px;
   cursor: pointer;
   font-weight: 500;
+  backdrop-filter: blur(2px);
+  transition: background 0.2s ease, transform 0.1s ease;
 }
 
 button:hover {
-  opacity: 0.9;
-  background: #a50b26; /* slightly darker red for hover */
+  background: rgba(255, 255, 255, 0.18);
 }
 
 button.active {
   background: var(--primary);
   color: #1a1a1a;
+  border-color: transparent;
 }
-
 
 #session-toggle button {
   margin-right: 6px;
@@ -96,6 +97,7 @@ button.active {
   display: flex;
   gap: 8px;
 }
+
 
 
 
