@@ -7,6 +7,21 @@ body {
   font-family: 'Inter', system-ui, sans-serif;
 }
 
+.site-header {
+  text-align: center;
+  padding: 20px 0 12px;
+}
+
+.site-header::after {
+  content: "";
+  display: block;
+  width: 160px;
+  height: 2px;
+  margin: 14px auto 0;
+  background-color: #c9a24d; /* dark gold */
+  border-radius: 2px;
+}
+
 :root {
   --bg: #5a1f2b;         /* burgundy */
   --cream: #f6f1e7;      /* soft cream */
@@ -104,13 +119,15 @@ button {
 }
 
 .site-logo {
-  display: block;
-  width: 72px;
+  width: 70px;
   height: auto;
-  margin: 16px auto 8px;
-  opacity: 0.95;
+  display: block;
+  margin: 0 auto;
   filter: drop-shadow(0 4px 8px rgba(0,0,0,0.35));
 }
+
+
+
 
 
 
