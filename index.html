@@ -15,26 +15,25 @@
   <img src="logo.png" alt="Jersey College Logo" class="banner-logo">
 </header>
 
-<div class="page">
-  <aside class="sidebar">
-    <div class="controls">
-      <div class="session-buttons">
-        <button id="dayBtn" onclick="setSession('Day')">Day</button>
-        <button id="eveningBtn" onclick="setSession('Evening')">Evening</button>
-      </div>
+<div class="layout">
 
-      <div class="day-buttons">
-        <button onclick="showDay('Monday')">Mon</button>
-        <button onclick="showDay('Tuesday')">Tue</button>
-        <button onclick="showDay('Wednesday')">Wed</button>
-        <button onclick="showDay('Thursday')">Thu</button>
-        <button onclick="showDay('Friday')">Fri</button>
-      </div>
+  <aside class="sidebar">
+    <div class="session-buttons">
+      <button id="dayBtn" onclick="setSession('Day')">Day</button>
+      <button id="eveningBtn" onclick="setSession('Evening')">Evening</button>
+    </div>
+
+    <div class="day-buttons">
+      <button onclick="showDay('Monday')">Mon</button>
+      <button onclick="showDay('Tuesday')">Tue</button>
+      <button onclick="showDay('Wednesday')">Wed</button>
+      <button onclick="showDay('Thursday')">Thu</button>
+      <button onclick="showDay('Friday')">Fri</button>
     </div>
   </aside>
 
-  <main class="layout content">
-    <h1 id="day">Tuesday's Schedule</h1>
+  <main class="content">
+    <h1 id="day"></h1>
 
     <div class="schedule-grid">
       <div class="program">
@@ -48,11 +47,13 @@
       </div>
     </div>
   </main>
+
 </div>
 
 <script src="script.js"></script>
 </body>
 </html>
+
 
 
 
