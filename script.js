@@ -4,9 +4,32 @@ let allRows = [];
 
 let SESSION_TYPE = "Day";
 
+function autoSetSessionByTime() {
+  const now = new Date();
+  const hour = now.getHours(); // 0–23
+
+  if (hour >= 16) {
+    SESSION_TYPE = "Evening";
+  } else {
+    SESSION_TYPE = "Day";
+  }
+}
+
 function setSession(session) {
   SESSION_TYPE = session;
   showDay(currentDay);
+}
+
+function updateSessionButtons() {
+  document.getElementById("dayBtn").classList.toggle(
+    "active",
+    SESSION_TYPE === "Day"
+  );
+
+  document.getElementById("eveningBtn").classList.toggle(
+    "active",
+    SESSION_TYPE === "Evening"
+  );
 }
 
 function formatTime(time24) {
@@ -84,12 +107,19 @@ fetch(SHEET_URL)
   .then(res => res.text())
   .then(text => {
     allRows = text.split(/\r?\n/).slice(1);
+
+    autoSetSessionByTime(); // 👈 ADD THIS LINE
+
     const today = new Date().toLocaleDateString("en-US", {
       weekday: "long"
     });
+
     showDay(today);
+    updateSessionButtons(); // 👈 ADD THIS (see next step)
   })
   .catch(err => console.error(err));
+
+
 
 
 
