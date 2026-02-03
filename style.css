@@ -48,27 +48,13 @@ body {
   font-weight: 600;
 }
 
-}
-
-button {
-  background: var(--cream);
-  color: #3a1a21;
-  border: none;
-  padding: 6px 14px;
-  border-radius: 12px;
-  cursor: pointer;
-  font-weight: 500;
-  transition: transform 0.1s ease, box-shadow 0.1s ease;
-  font-family: 'Inter', system-ui, sans-serif;
-}
-
 button:hover {
-  box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+  background: rgba(246, 241, 231, 1);
 }
 
 button.active {
-  background: var(--primary);
-  color: #1a1a1a;
+  background: var(--primary); /* dark gold */
+  color: #2a1a1a;
 }
 
 #session-toggle button {
@@ -102,6 +88,19 @@ button.active {
 .day-buttons {
   display: flex;
   gap: 8px;
+}
+
+button {
+  background: rgba(246, 241, 231, 0.85); /* soft cream */
+  color: #3a1a21; /* deep burgundy text */
+  border: none;
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 0.9rem;
+  cursor: pointer;
+  box-shadow: inset 0 0 0 1px rgba(0,0,0,0.05);
+  transition: background 0.2s ease, box-shadow 0.2s ease;
 }
 
 
