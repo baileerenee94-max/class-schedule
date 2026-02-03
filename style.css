@@ -118,8 +118,35 @@ button {
   transition: background 0.2s ease, box-shadow 0.2s ease;
 }
 
+.layout {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 32px;
+  padding: 0 24px;
+}
 
+.sidebar {
+  background-color: #f6f1e7; /* soft cream */
+  padding: 16px;
+  border-radius: 12px;
+}
 
+.session-buttons,
+.day-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+@media (max-width: 800px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar {
+    margin-bottom: 24px;
+  }
+}
 
 
 
