@@ -137,11 +137,13 @@ function renderProgram(day, programName, containerId) {
   classesForDay.forEach(cls => {
     const div = document.createElement("div");
     div.className = "class";
-    div.innerHTML =
-      "<strong>" + cls.subject + "</strong><br>" +
-      cls.room + "<br>" +
-      formatTime(cls.start) +
-      (cls.end ? " – " + formatTime(cls.end) : "");
+    div.innerHTML = `
+  <div class="class-title">${cls.subject}</div>
+  <div class="class-room">${cls.room}</div>
+  <div class="class-time">
+    ${formatTime(cls.start)}${cls.end ? " – " + formatTime(cls.end) : ""}
+  </div>
+`;
 
     container.appendChild(div);
   });
@@ -172,6 +174,7 @@ Papa.parse(SHEET_URL, {
     console.error("CSV parse error:", err);
   }
 });
+
 
 
 
