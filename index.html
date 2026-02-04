@@ -16,21 +16,28 @@
 
 <header class="header">
   <div class="logo-panel">
+
     <div class="header-menu">
-    <div class="session-buttons">
-      <button id="dayBtn" onclick="setSession('Day')">Day</button>
-      <button id="eveningBtn" onclick="setSession('Evening')">Evening</button>
+      <button class="hamburger" onclick="toggleMenu()">☰</button>
+
+      <div id="menuDropdown" class="menu-dropdown">
+        <div class="menu-section">
+          <button id="dayBtn" onclick="setSession('Day')">Day</button>
+          <button id="eveningBtn" onclick="setSession('Evening')">Evening</button>
+        </div>
+
+        <div class="menu-section">
+          <button onclick="showDay('Monday')">Mon</button>
+          <button onclick="showDay('Tuesday')">Tue</button>
+          <button onclick="showDay('Wednesday')">Wed</button>
+          <button onclick="showDay('Thursday')">Thu</button>
+          <button onclick="showDay('Friday')">Fri</button>
+        </div>
+      </div>
     </div>
 
-    <div class="day-buttons">
-      <button onclick="showDay('Monday')">Mon</button>
-      <button onclick="showDay('Tuesday')">Tue</button>
-      <button onclick="showDay('Wednesday')">Wed</button>
-      <button onclick="showDay('Thursday')">Thu</button>
-      <button onclick="showDay('Friday')">Fri</button>
-    </div>
-  </div>
     <img src="logo.png" alt="Jersey College School of Nursing" class="logo-img">
+
   </div>
 </header>
 
@@ -57,6 +64,7 @@
 <script src="script.js"></script>
 </body>
 </html>
+
 
 
 
