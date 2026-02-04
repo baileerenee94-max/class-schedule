@@ -1,5 +1,5 @@
 :root {
-  --bg: #9b0c27;
+  --bg: #6d6e70;
   --cream: #f8f3d2;
   --primary: #d59f0f;
   --secondary: #e6c26e;
@@ -194,6 +194,7 @@ button.active {
 .content {
   padding-top: 16px;
 }
+
 
 
 
