@@ -102,6 +102,14 @@ body {
   font-weight: 700;
 }
 
+.schedule-date {
+  display: block;
+  font-size: 0.85em;
+  margin-top: 2px;
+  color: #f6e7c3; /* cream tone */
+  font-weight: 500;
+}
+
 .program h2 {
   color: var(--primary);
   border-bottom: 2px solid var(--primary);
@@ -317,6 +325,7 @@ button.active {
   background: #d4af37;
   color: #000;
 }
+
 
 
 
