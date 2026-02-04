@@ -138,29 +138,23 @@ body {
 .class {
   background: var(--cream);
   border-left: 4px solid var(--primary);
-  padding: 12px;
-  margin-bottom: 12px;
-  border-radius: 12px;
+  padding: 8px 10px;
+  margin-bottom: 6px;
+  border-radius: 10px;
+
+  font-size: 16.5px;
+  line-height: 1.25;
   color: var(--text);
-  box-shadow: 0 6px 16px rgba(0,0,0,0.25);
 }
 
-.class {
-  padding: 10px;
-  margin-bottom: 10px;
+.class strong {
+  display: block;
+  font-size: 18px;
+  line-height: 1.2;
 }
 
 #day {
   margin-bottom: 12px;
-}
-
-.class {
-  font-size: 18px;
-  line-height: 1.35;
-}
-
-.class strong {
-  font-size: 21px;
 }
 
 button {
@@ -305,6 +299,7 @@ button.active {
   background: #d4af37;
   color: #000;
 }
+
 
 
 
