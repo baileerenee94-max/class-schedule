@@ -16,13 +16,7 @@
 
 <header class="header">
   <div class="logo-panel">
-    <img src="logo.png" alt="Jersey College School of Nursing" class="logo-img">
-  </div>
-</header>
-
-<div class="layout">
-
-  <aside class="sidebar">
+    <div class="header-menu">
     <div class="session-buttons">
       <button id="dayBtn" onclick="setSession('Day')">Day</button>
       <button id="eveningBtn" onclick="setSession('Evening')">Evening</button>
@@ -35,7 +29,12 @@
       <button onclick="showDay('Thursday')">Thu</button>
       <button onclick="showDay('Friday')">Fri</button>
     </div>
-  </aside>
+  </div>
+    <img src="logo.png" alt="Jersey College School of Nursing" class="logo-img">
+  </div>
+</header>
+
+<div class="layout">
 
   <main class="content">
     <h1 id="day"></h1>
@@ -58,6 +57,7 @@
 <script src="script.js"></script>
 </body>
 </html>
+
 
 
 
