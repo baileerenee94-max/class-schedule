@@ -25,18 +25,21 @@ function startLiveSessionWatcher() {
   let lastSession = SESSION_TYPE;
 
   setInterval(() => {
-    const now = new Date();
-    const hour = now.getHours();
+  const now = new Date();
+  const hour = now.getHours();
 
-    const newSession = hour >= 16 ? "Evening" : "Day";
+  const newSession = hour >= 16 ? "Evening" : "Day";
 
-    if (newSession !== lastSession) {
-      lastSession = newSession;
-      SESSION_TYPE = newSession;
-      updateSessionButtons();
-      showDay(currentDay);
-    }
-  }, 60000); // check every 60 seconds
+  // Always re-render (for ended classes)
+  showDay(currentDay);
+
+  // Only change session if needed
+  if (newSession !== lastSession) {
+    lastSession = newSession;
+    SESSION_TYPE = newSession;
+    updateSessionButtons();
+  }
+}, 60000); // every 60 seconds
 }
 
 function setSession(session) {
@@ -78,6 +81,18 @@ function showDay(day) {
   renderProgram(day, "PN", "schedule-pn");
 }
 
+function hasClassEnded(endTime) {
+  if (!endTime) return false; // no end time = always show
+
+  const now = new Date();
+  const [endHour, endMinute] = endTime.split(":").map(Number);
+
+  const end = new Date();
+  end.setHours(endHour, endMinute, 0, 0);
+
+  return now > end;
+}
+
 function renderProgram(day, programName, containerId) {
   const container = document.getElementById(containerId);
   container.innerHTML = "";
@@ -99,13 +114,14 @@ function renderProgram(day, programName, containerId) {
     session.trim().toUpperCase() === SESSION_TYPE.toUpperCase() &&
     rowDay.trim() === day
   ) {
-    classesForDay.push({
-      start: row.Start,
-      end: row.End,
-      subject: row.Subject,
-      room: row.Room
-    });
-  }
+    if (!hasClassEnded(row.End)) {
+  classesForDay.push({
+    start: row.Start,
+    end: row.End,
+    subject: row.Subject,
+    room: row.Room
+  });
+}
 });
 
 
@@ -155,6 +171,7 @@ Papa.parse(SHEET_URL, {
     console.error("CSV parse error:", err);
   }
 });
+
 
 
 
