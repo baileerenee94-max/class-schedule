@@ -83,9 +83,9 @@ function renderProgram(day, programName, containerId) {
 
     const cells = row.split(",").map(c => c.trim());
 
-    const program = cells[0];
-    const session = cells[1];
-    const rowDay = cells[2];
+    const program = row.Program;
+    const session = row.Session;
+    const rowDay = row.Day;
 
     if (
       program.trim().toUpperCase() === programName &&
@@ -93,11 +93,11 @@ function renderProgram(day, programName, containerId) {
       rowDay.trim() === day
     ) {
       classesForDay.push({
-        start: cells[3],
-        end: cells[4],
-        subject: cells[5],
-        room: cells[6]
-      });
+        start: row.Start,
+        end: row.End,
+        subject: row.Subject,
+        room: row.Room
+    });
     }
   });
 
@@ -125,13 +125,14 @@ function renderProgram(day, programName, containerId) {
   }
 }
 
-fetch(SHEET_URL)
-  .then(res => res.text())
-  .then(text => {
-    allRows = text.split(/\r?\n/).slice(1);
+Papa.parse(SHEET_URL, {
+  download: true,
+  header: true,
+  skipEmptyLines: true,
+  complete: function(results) {
+    allRows = results.data;
 
     autoSetSessionByTime();
-    startLiveSessionWatcher();
 
     const today = new Date().toLocaleDateString("en-US", {
       weekday: "long"
@@ -139,8 +140,18 @@ fetch(SHEET_URL)
 
     showDay(today);
     updateSessionButtons();
+    startLiveSessionWatcher();
+  },
+  error: function(err) {
+    console.error("CSV parse error:", err);
+  }
+});
+
+    showDay(today);
+    updateSessionButtons();
   })
   .catch(err => console.error(err));
+
 
 
 
