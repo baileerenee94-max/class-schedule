@@ -143,14 +143,18 @@ body {
   border-radius: 10px;
 
   font-size: 16.5px;
-  line-height: 1.25;
+  line-height: 1.2;
   color: var(--text);
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
 }
 
 .class strong {
   display: block;
   font-size: 18px;
-  line-height: 1.2;
+  line-height: 1.15;
+  margin-bottom: 2px;
 }
 
 #day {
@@ -299,6 +303,7 @@ button.active {
   background: #d4af37;
   color: #000;
 }
+
 
 
 
