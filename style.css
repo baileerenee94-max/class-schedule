@@ -210,6 +210,40 @@ button.active {
   padding-top: 16px;
 }
 
+.header-menu {
+  position: absolute;
+  top: 10px;
+  left: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  z-index: 10;
+}
+
+/* shared button styles */
+.header-menu button {
+  border: none;
+  border-radius: 14px;
+  padding: 4px 10px;
+  font-size: 12px;
+  cursor: pointer;
+  background: #ead9d4;
+  color: #5c1b2b;
+}
+
+/* active state (your JS already toggles this) */
+.header-menu button.active {
+  background: #d4a017;
+  color: #000;
+}
+
+/* row layouts */
+.session-buttons,
+.day-buttons {
+  display: flex;
+  gap: 6px;
+}
+
 
 
 
