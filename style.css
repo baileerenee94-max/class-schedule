@@ -159,6 +159,18 @@ body {
   padding:0;
 }
 
+.class-title,
+.class-room,
+.class-time {
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+}
+
+.class-title {
+  font-weight: 600;
+}
+
 #day {
   margin-bottom: 12px;
 }
@@ -305,6 +317,7 @@ button.active {
   background: #d4af37;
   color: #000;
 }
+
 
 
 
