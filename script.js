@@ -74,7 +74,6 @@ let currentDay = "";
 function showDay(day) {
   currentDay = day;
   document.getElementById("menuDropdown")?.classList.remove("open");
-  const today = new Date();
 
 const now = new Date();
 
@@ -212,6 +211,7 @@ Papa.parse(SHEET_URL, {
     console.error("CSV parse error:", err);
   }
 });
+
 
 
 
