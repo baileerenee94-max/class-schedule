@@ -7,7 +7,8 @@ let allRows = [];
 let SESSION_TYPE = "Day";
 
 function toggleMenu() {
-  document.getElementById("menuDropdown").classList.toggle("show");
+  document.getElementById("menuDropdown");
+  classList.toggle("open");
 }
 
 function autoSetSessionByTime() {
@@ -171,6 +172,7 @@ Papa.parse(SHEET_URL, {
     console.error("CSV parse error:", err);
   }
 });
+
 
 
 
