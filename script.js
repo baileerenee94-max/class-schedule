@@ -122,7 +122,7 @@ function renderProgram(day, programName, containerId) {
     subject: row.Subject,
     room: row.Room
   });
-}
+ }
 });
 
 
@@ -172,6 +172,7 @@ Papa.parse(SHEET_URL, {
     console.error("CSV parse error:", err);
   }
 });
+
 
 
 
