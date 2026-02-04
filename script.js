@@ -76,13 +76,37 @@ function showDay(day) {
   document.getElementById("menuDropdown")?.classList.remove("open");
   const today = new Date();
 
-const formattedDate = today.toLocaleDateString("en-US", {
+const today = new Date();
+
+const daysOfWeek = [
+  "Sunday",
+  "Monday",
+  "Tuesday",
+  "Wednesday",
+  "Thursday",
+  "Friday",
+  "Saturday"
+];
+
+const todayIndex = today.getDay();
+const selectedIndex = daysOfWeek.indexOf(day);
+
+// Calculate date difference
+let diff = selectedIndex - todayIndex;
+
+// If you want the *current week* always (not next week)
+const selectedDate = new Date(today);
+selectedDate.setDate(today.getDate() + diff);
+
+// Format date
+const formattedDate = selectedDate.toLocaleDateString("en-US", {
   month: "long",
   day: "numeric"
 });
 
 document.getElementById("day").innerHTML =
   `${day}'s Schedule<br><span class="schedule-date">${formattedDate}</span>`;
+
 
   renderProgram(day, "RN", "schedule-rn");
   renderProgram(day, "PN", "schedule-pn");
@@ -181,6 +205,7 @@ Papa.parse(SHEET_URL, {
     console.error("CSV parse error:", err);
   }
 });
+
 
 
 
