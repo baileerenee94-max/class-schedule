@@ -54,6 +54,7 @@ function updateSessionButtons() {
 }
 
 function formatTime(time24) {
+  if (!time24) return "";   // 👈 guard clause
   const [hour, minute] = time24.split(":").map(Number);
   const ampm = hour >= 12 ? "PM" : "AM";
   const hour12 = hour % 12 || 12;
@@ -115,7 +116,8 @@ function renderProgram(day, programName, containerId) {
     div.innerHTML =
       "<strong>" + cls.subject + "</strong><br>" +
       cls.room + "<br>" +
-      formatTime(cls.start) + " – " + formatTime(cls.end);
+      formatTime(cls.start) +
+      (cls.end ? " – " + formatTime(cls.end) : "");
 
     container.appendChild(div);
   });
@@ -151,6 +153,7 @@ Papa.parse(SHEET_URL, {
     updateSessionButtons();
   })
   .catch(err => console.error(err));
+
 
 
 
