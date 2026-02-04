@@ -34,6 +34,13 @@ body {
   display: block;
 }
 
+.logo-panel {
+  background: #f8f3d2;
+  width: 100%;
+  padding: 14px 0;
+  text-align: center;
+}
+
 .page {
   position: relative;
 }
@@ -194,6 +201,7 @@ button.active {
 .content {
   padding-top: 16px;
 }
+
 
 
 
