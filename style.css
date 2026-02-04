@@ -37,8 +37,16 @@ body {
 .logo-panel {
   background: #f8f3d2;
   width: 100%;
-  padding: 14px 0;
+  padding: 6px 0;
   text-align: center;
+}
+
+.logo-img {
+  max-height: 120px;     /* 🔑 adjust this */
+  width: auto;
+  height: auto;
+  display: block;
+  margin: 0 auto;
 }
 
 .page {
@@ -201,6 +209,7 @@ button.active {
 .content {
   padding-top: 16px;
 }
+
 
 
 
