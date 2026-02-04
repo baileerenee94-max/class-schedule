@@ -46,7 +46,7 @@ function setSession(session) {
   SESSION_TYPE = session;
   updateSessionButtons();
   showDay(currentDay);
-  document.getElementById("menuDropdown")?.classList.remove("show");
+  document.getElementById("menuDropdown")?.classList.remove("open");
 }
 
 function updateSessionButtons() {
@@ -73,7 +73,7 @@ let currentDay = "";
 
 function showDay(day) {
   currentDay = day;
-  document.getElementById("menuDropdown")?.classList.remove("show");
+  document.getElementById("menuDropdown")?.classList.remove("open");
   document.getElementById("day").innerText =
     day + "'s Schedule";
 
@@ -174,6 +174,7 @@ Papa.parse(SHEET_URL, {
     console.error("CSV parse error:", err);
   }
 });
+
 
 
 
