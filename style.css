@@ -42,7 +42,7 @@ body {
 }
 
 .logo-img {
-  max-height: 120px;     /* 🔑 adjust this */
+  max-height: 80px;     /* 🔑 adjust this */
   width: auto;
   height: auto;
   display: block;
@@ -209,6 +209,7 @@ button.active {
 .content {
   padding-top: 16px;
 }
+
 
 
 
