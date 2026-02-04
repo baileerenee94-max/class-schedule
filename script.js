@@ -7,8 +7,7 @@ let allRows = [];
 let SESSION_TYPE = "Day";
 
 function toggleMenu() {
-  document.getElementById("menuDropdown");
-  classList.toggle("open");
+  document.getElementById("menuDropdown").classList.toggle("open");
 }
 
 function autoSetSessionByTime() {
@@ -123,6 +122,7 @@ function renderProgram(day, programName, containerId) {
     room: row.Room
   });
  }
+}
 });
 
 
@@ -172,6 +172,8 @@ Papa.parse(SHEET_URL, {
     console.error("CSV parse error:", err);
   }
 });
+
+
 
 
 
