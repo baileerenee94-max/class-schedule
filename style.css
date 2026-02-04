@@ -183,6 +183,14 @@ body {
   margin-bottom: 12px;
 }
 
+#sleepOverlay {
+  position: fixed;
+  inset: 0;
+  background: black;
+  z-index: 9999;
+  display: none;
+}
+
 button {
   background: rgba(246, 241, 231, 0.85);
   color: #3a1a21;
@@ -336,6 +344,7 @@ html {
   background: #d4af37;
   color: #000;
 }
+
 
 
 
