@@ -123,7 +123,7 @@ function renderProgram(day, programName, containerId) {
   });
  }
 }
-});
+  });
 
 
   // ✅ SORT ONCE
@@ -172,6 +172,7 @@ Papa.parse(SHEET_URL, {
     console.error("CSV parse error:", err);
   }
 });
+
 
 
 
