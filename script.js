@@ -74,8 +74,15 @@ let currentDay = "";
 function showDay(day) {
   currentDay = day;
   document.getElementById("menuDropdown")?.classList.remove("open");
-  document.getElementById("day").innerText =
-    day + "'s Schedule";
+  const today = new Date();
+
+const formattedDate = today.toLocaleDateString("en-US", {
+  month: "long",
+  day: "numeric"
+});
+
+document.getElementById("day").innerHTML =
+  `${day}'s Schedule<br><span class="schedule-date">${formattedDate}</span>`;
 
   renderProgram(day, "RN", "schedule-rn");
   renderProgram(day, "PN", "schedule-pn");
@@ -174,6 +181,7 @@ Papa.parse(SHEET_URL, {
     console.error("CSV parse error:", err);
   }
 });
+
 
 
 
