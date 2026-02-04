@@ -244,6 +244,58 @@ button.active {
   gap: 6px;
 }
 
+.header-menu {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  z-index: 100;
+}
+
+/* Hamburger button */
+.hamburger {
+  font-size: 28px;
+  background: none;
+  border: none;
+  color: #d4af37;
+  cursor: pointer;
+}
+
+/* Dropdown panel */
+.menu-dropdown {
+  display: none;
+  margin-top: 10px;
+  background: #f6f1dc;
+  border-radius: 12px;
+  padding: 12px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+}
+
+/* When open */
+.menu-dropdown.show {
+  display: block;
+}
+
+.menu-section {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.menu-dropdown button {
+  border: none;
+  padding: 8px 12px;
+  border-radius: 20px;
+  background: #e6dccb;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.menu-dropdown button.active {
+  background: #d4af37;
+  color: #000;
+}
+
 
 
 
