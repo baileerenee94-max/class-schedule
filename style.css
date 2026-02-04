@@ -220,9 +220,20 @@ button.active {
     gap: 24px;
   }
 
+  @media (prefers-color-scheme: dark) {
+  body {
+    background: var(--bg);
+    color: var(--text);
+  }
+}
+
   .banner-logo {
     height: 130px;
   }
+}
+
+html {
+  color-scheme: light;
 }
 
 .page {
@@ -325,6 +336,7 @@ button.active {
   background: #d4af37;
   color: #000;
 }
+
 
 
 
