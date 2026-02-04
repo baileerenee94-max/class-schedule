@@ -80,27 +80,29 @@ function renderProgram(day, programName, containerId) {
   const classesForDay = [];
 
   allRows.forEach(row => {
-    if (!row) return;
+  if (!row) return;
 
-    const cells = row.split(",").map(c => c.trim());
+  const program = row.Program;
+  const session = row.Session;
+  const rowDay = row.Day;
 
-    const program = row.Program;
-    const session = row.Session;
-    const rowDay = row.Day;
-
-    if (
-      program.trim().toUpperCase() === programName &&
-      session.trim().toUpperCase() === SESSION_TYPE.toUpperCase() &&
-      rowDay.trim() === day
-    ) {
-      classesForDay.push({
-        start: row.Start,
-        end: row.End,
-        subject: row.Subject,
-        room: row.Room
+  if (
+    program &&
+    session &&
+    rowDay &&
+    program.trim().toUpperCase() === programName &&
+    session.trim().toUpperCase() === SESSION_TYPE.toUpperCase() &&
+    rowDay.trim() === day
+  ) {
+    classesForDay.push({
+      start: row.Start,
+      end: row.End,
+      subject: row.Subject,
+      room: row.Room
     });
-    }
-  });
+  }
+});
+
 
   // ✅ SORT ONCE
   classesForDay.sort((a, b) => {
@@ -149,10 +151,6 @@ Papa.parse(SHEET_URL, {
   }
 });
 
-    showDay(today);
-    updateSessionButtons();
-  })
-  .catch(err => console.error(err));
 
 
 
