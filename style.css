@@ -148,7 +148,7 @@ body {
 .class {
   padding: 10px;
   margin-bottom: 10px;
-  font-size: 0.9rem;
+  font-size: 1.5rem;
 }
 
 #day {
@@ -295,6 +295,7 @@ button.active {
   background: #d4af37;
   color: #000;
 }
+
 
 
 
