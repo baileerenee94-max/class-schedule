@@ -50,22 +50,30 @@ body {
 }
 
 .clinical-footer {
-  margin-top: 16px;
-  padding-top: 8px;
-  border-top: 2px solid #d59f0f; /* gold */
-  font-size: 0.9rem;
+  margin-top: 20px;
+  padding: 14px 18px;
+  background: #f6f2ea;
+  border-top: 3px solid #c7b89e;
 }
 
 .clinical-footer h3 {
-  margin: 0 0 6px;
-  font-size: 1rem;
-  color: #d4af37;
+  margin: 0 0 8px;
+  font-size: 1.1rem;
+  letter-spacing: 0.03em;
+}
+
+.clinical-footer h4 {
+  margin: 10px 0 4px;
+  font-size: 0.95rem;
+  text-transform: uppercase;
 }
 
 .clinical-item {
+  font-size: 0.9rem;
   line-height: 1.1;
   margin-bottom: 4px;
 }
+
 
 .page {
   position: relative;
@@ -362,6 +370,7 @@ html {
   background: #d4af37;
   color: #000;
 }
+
 
 
 
