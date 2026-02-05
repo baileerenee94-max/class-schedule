@@ -140,12 +140,21 @@ function renderProgram(day, programName, containerId) {
   const classesForDay = [];
 
   allRows.forEach(row => {
-    if (
-      row.Program &&
-      row.Session &&
-      row.Day &&
-      row.Program.trim().toUpperCase() === programName &&
-      row.Session.trim().toUpperCase() === SESSION_TYPE.toUpperCase() &&
+    const isClinical =
+  row.Clinical?.toLowerCase() === "yes" ||
+  row.Subject?.toLowerCase().includes("clinical") ||
+  row.Room?.toLowerCase().includes("clinical");
+
+if (
+  program &&
+  session &&
+  rowDay &&
+  !isClinical && // ⬅️ THIS LINE REMOVES CLINICALS
+  program.trim().toUpperCase() === programName &&
+  session.trim().toUpperCase() === SESSION_TYPE.toUpperCase() &&
+  rowDay.trim() === day
+) {
+
       row.Day.trim() === day &&
       !hasClassEnded(row.End)
     ) {
@@ -275,6 +284,7 @@ Papa.parse(SHEET_URL, {
   },
   error: err => console.error("CSV error:", err)
 });
+
 
 
 
