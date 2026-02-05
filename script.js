@@ -13,6 +13,7 @@ let currentDay = "";
 function toggleMenu() {
   const menu = document.getElementById("menuDropdown");
   menu.classList.toggle("show");
+  document.getElementById("menuDropdown")?.classList.remove("show");
 }
 
 /* ======================
@@ -281,6 +282,7 @@ Papa.parse(SHEET_URL, {
   },
   error: err => console.error("CSV error:", err)
 });
+
 
 
 
