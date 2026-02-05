@@ -91,6 +91,8 @@ function showDay(day) {
 
   renderProgram(day, "RN", "schedule-rn");
   renderProgram(day, "PN", "schedule-pn");
+  renderClinicals(day);
+
 }
 
 /* ======================
@@ -177,6 +179,47 @@ function renderProgram(day, programName, containerId) {
   }
 }
 
+function renderClinicals(day) {
+  const container = document.getElementById("clinical-list");
+  if (!container) return;
+
+  container.innerHTML = "";
+  const clinicalClasses = [];
+
+  allRows.forEach(row => {
+    if (
+      row.Day === day &&
+      row.Session?.toUpperCase() === SESSION_TYPE.toUpperCase() &&
+      (
+        row.Room?.toLowerCase().includes("clinical") ||
+        row.Subject?.toLowerCase().includes("clinical")
+      )
+    ) {
+      clinicalClasses.push({
+        program: row.Program,
+        subject: row.Subject,
+        room: row.Room,
+        start: row.Start,
+        end: row.End
+      });
+    }
+  });
+
+  if (!clinicalClasses.length) {
+    container.innerText = "No clinicals today";
+    return;
+  }
+
+  clinicalClasses.forEach(cls => {
+    const div = document.createElement("div");
+    div.className = "clinical-item";
+    div.innerHTML =
+      `<strong>${cls.program}</strong> – ${cls.subject}, ` +
+      `${cls.room} (${formatTime(cls.start)}${cls.end ? "–" + formatTime(cls.end) : ""})`;
+    container.appendChild(div);
+  });
+}
+
 /* ======================
    SLEEP MODE
 ====================== */
@@ -217,3 +260,4 @@ Papa.parse(SHEET_URL, {
   },
   error: err => console.error("CSV error:", err)
 });
+
