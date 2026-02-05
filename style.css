@@ -346,7 +346,7 @@ html {
 }
 
 /* When open */
-.menu-dropdown.open {
+.menu-dropdown.show {
   display: block;
 }
 
@@ -370,6 +370,7 @@ html {
   background: #d4af37;
   color: #000;
 }
+
 
 
 
