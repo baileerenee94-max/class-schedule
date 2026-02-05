@@ -187,13 +187,15 @@ function renderClinicals(day) {
   const clinicalClasses = [];
 
   allRows.forEach(row => {
+    const isClinical =
+      row.Clinical?.toLowerCase() === "yes" ||
+      row.Room?.toLowerCase().includes("clinical") ||
+      row.Subject?.toLowerCase().includes("clinical");
+
     if (
+      isClinical &&
       row.Day === day &&
-      row.Session?.toUpperCase() === SESSION_TYPE.toUpperCase() &&
-      (
-        row.Room?.toLowerCase().includes("clinical") ||
-        row.Subject?.toLowerCase().includes("clinical")
-      )
+      row.Session?.toUpperCase() === SESSION_TYPE.toUpperCase()
     ) {
       clinicalClasses.push({
         program: row.Program,
@@ -219,6 +221,7 @@ function renderClinicals(day) {
     container.appendChild(div);
   });
 }
+
 
 /* ======================
    SLEEP MODE
@@ -260,4 +263,5 @@ Papa.parse(SHEET_URL, {
   },
   error: err => console.error("CSV error:", err)
 });
+
 
