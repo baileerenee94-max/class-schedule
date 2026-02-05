@@ -184,7 +184,11 @@ function renderClinicals(day) {
   if (!container) return;
 
   container.innerHTML = "";
-  const clinicalClasses = [];
+
+  const grouped = {
+    RN: [],
+    PN: []
+  };
 
   allRows.forEach(row => {
     const isClinical =
@@ -197,30 +201,38 @@ function renderClinicals(day) {
       row.Day === day &&
       row.Session?.toUpperCase() === SESSION_TYPE.toUpperCase()
     ) {
-      clinicalClasses.push({
-        program: row.Program,
-        subject: row.Subject,
-        room: row.Room,
-        start: row.Start,
-        end: row.End
-      });
+      const program = row.Program?.toUpperCase();
+      if (grouped[program]) {
+        grouped[program].push(row);
+      }
     }
   });
 
-  if (!clinicalClasses.length) {
+  if (!grouped.RN.length && !grouped.PN.length) {
     container.innerText = "No clinicals today";
     return;
   }
 
-  clinicalClasses.forEach(cls => {
-    const div = document.createElement("div");
-    div.className = "clinical-item";
-    div.innerHTML =
-      `<strong>${cls.program}</strong> – ${cls.subject}, ` +
-      `${cls.room} (${formatTime(cls.start)}${cls.end ? "–" + formatTime(cls.end) : ""})`;
-    container.appendChild(div);
+  ["RN", "PN"].forEach(program => {
+    if (!grouped[program].length) return;
+
+    const title = document.createElement("h4");
+    title.innerText = `${program} Clinicals`;
+    container.appendChild(title);
+
+    grouped[program].forEach(row => {
+      const div = document.createElement("div");
+      div.className = "clinical-item";
+      div.innerHTML =
+        `<strong>${row.Subject}</strong><br>` +
+        `${row.Room}<br>` +
+        `${formatTime(row.Start)}${row.End ? " – " + formatTime(row.End) : ""}`;
+
+      container.appendChild(div);
+    });
   });
 }
+
 
 
 /* ======================
@@ -263,5 +275,6 @@ Papa.parse(SHEET_URL, {
   },
   error: err => console.error("CSV error:", err)
 });
+
 
 
