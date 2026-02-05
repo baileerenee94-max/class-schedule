@@ -194,16 +194,13 @@ function renderClinicals(day) {
 
   container.innerHTML = "";
 
-  const grouped = {
-    RN: [],
-    PN: []
-  };
+  const grouped = { RN: [], PN: [] };
 
   allRows.forEach(row => {
     const isClinical =
       row.Clinical?.toLowerCase() === "yes" ||
-      row.Room?.toLowerCase().includes("clinical") ||
-      row.Subject?.toLowerCase().includes("clinical");
+      row.Subject?.toLowerCase().includes("clinical") ||
+      row.Room?.toLowerCase().includes("clinical");
 
     if (
       isClinical &&
@@ -211,9 +208,7 @@ function renderClinicals(day) {
       row.Session?.toUpperCase() === SESSION_TYPE.toUpperCase()
     ) {
       const program = row.Program?.toUpperCase();
-      if (grouped[program]) {
-        grouped[program].push(row);
-      }
+      if (grouped[program]) grouped[program].push(row);
     }
   });
 
@@ -236,12 +231,10 @@ function renderClinicals(day) {
         `<strong>${row.Subject}</strong><br>` +
         `${row.Room}<br>` +
         `${formatTime(row.Start)}${row.End ? " – " + formatTime(row.End) : ""}`;
-
       container.appendChild(div);
     });
   });
 }
-
 
 
 /* ======================
@@ -284,6 +277,7 @@ Papa.parse(SHEET_URL, {
   },
   error: err => console.error("CSV error:", err)
 });
+
 
 
 
