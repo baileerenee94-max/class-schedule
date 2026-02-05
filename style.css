@@ -49,6 +49,24 @@ body {
   margin: 0 auto;
 }
 
+.clinical-footer {
+  margin-top: 16px;
+  padding-top: 8px;
+  border-top: 2px solid #d59f0f; /* gold */
+  font-size: 0.9rem;
+}
+
+.clinical-footer h3 {
+  margin: 0 0 6px;
+  font-size: 1rem;
+  color: #d4af37;
+}
+
+.clinical-item {
+  line-height: 1.1;
+  margin-bottom: 4px;
+}
+
 .page {
   position: relative;
 }
@@ -344,6 +362,7 @@ html {
   background: #d4af37;
   color: #000;
 }
+
 
 
 
