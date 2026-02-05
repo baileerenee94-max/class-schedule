@@ -157,7 +157,7 @@ if (
 
       row.Day.trim() === day &&
       !hasClassEnded(row.End)
-    ) {
+     {
       classesForDay.push({
         start: row.Start,
         end: row.End,
@@ -277,6 +277,7 @@ Papa.parse(SHEET_URL, {
   },
   error: err => console.error("CSV error:", err)
 });
+
 
 
 
