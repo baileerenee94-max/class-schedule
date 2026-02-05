@@ -140,24 +140,27 @@ function renderProgram(day, programName, containerId) {
   const classesForDay = [];
 
   allRows.forEach(row => {
+    if (!row) return;
+
+    const program = row.Program;
+    const session = row.Session;
+    const rowDay = row.Day;
+
     const isClinical =
-  row.Clinical?.toLowerCase() === "yes" ||
-  row.Subject?.toLowerCase().includes("clinical") ||
-  row.Room?.toLowerCase().includes("clinical");
+      row.Clinical?.toLowerCase() === "yes" ||
+      row.Subject?.toLowerCase().includes("clinical") ||
+      row.Room?.toLowerCase().includes("clinical");
 
-if (
-  program &&
-  session &&
-  rowDay &&
-  !isClinical && // ⬅️ THIS LINE REMOVES CLINICALS
-  program.trim().toUpperCase() === programName &&
-  session.trim().toUpperCase() === SESSION_TYPE.toUpperCase() &&
-  rowDay.trim() === day
-) {
-
-      row.Day.trim() === day &&
+    if (
+      program &&
+      session &&
+      rowDay &&
+      !isClinical &&                               // ⬅️ excludes clinicals
+      program.trim().toUpperCase() === programName &&
+      session.trim().toUpperCase() === SESSION_TYPE.toUpperCase() &&
+      rowDay.trim() === day &&
       !hasClassEnded(row.End)
-     {
+    ) {
       classesForDay.push({
         start: row.Start,
         end: row.End,
@@ -187,6 +190,7 @@ if (
     container.innerText = "No classes";
   }
 }
+
 
 function renderClinicals(day) {
   const container = document.getElementById("clinical-list");
@@ -277,6 +281,7 @@ Papa.parse(SHEET_URL, {
   },
   error: err => console.error("CSV error:", err)
 });
+
 
 
 
